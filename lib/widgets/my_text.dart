@@ -59,7 +59,7 @@ class Write extends StatelessWidget {
     }
     return Container(
       padding:
-          myAction == _Action.heading ? EdgeInsets.all(16) : EdgeInsets.all(8),
+          myAction == _Action.heading ? const EdgeInsets.all(16) : const EdgeInsets.all(8),
       child: Text(
         label,
         style: style,

@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
-class MyText extends StatelessWidget {
+class Write extends StatelessWidget {
   final String label;
-  Action myAction = Action.paragraph;
-  MyText.title(this.label, {Key? key}) : super(key: key) {
-    myAction = Action.title;
+
+  _Action myAction = _Action.paragraph;
+
+  Write.heading(this.label, {Key? key}) : super(key: key) {
+    myAction = _Action.heading;
   }
 
-  MyText.subTitle(this.label, {Key? key}) : super(key: key) {
-    myAction = Action.subtitle;
+  Write.subheading(this.label, {Key? key}) : super(key: key) {
+    myAction = _Action.subheading;
   }
 
-  MyText.paragraph(this.label, {Key? key}) : super(key: key) {
-    myAction = Action.paragraph;
+  Write.paragraph(this.label, {Key? key}) : super(key: key) {
+    myAction = _Action.paragraph;
+  }
+
+  Write.caption(this.label, {Key? key}) : super(key: key) {
+    myAction = _Action.caption;
   }
 
   @override
@@ -20,24 +26,31 @@ class MyText extends StatelessWidget {
     TextStyle style = const TextStyle();
 
     switch (myAction) {
-      case Action.title:
+      case _Action.heading:
         {
           style = const TextStyle(
               fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black);
           break;
         }
-      case Action.subtitle:
+      case _Action.subheading:
         {
           style = const TextStyle(
               fontSize: 17, fontWeight: FontWeight.w600, color: Colors.black);
           break;
         }
-      case Action.paragraph:
+      case _Action.paragraph:
         {
           style = const TextStyle(
               fontSize: 14, fontWeight: FontWeight.w200, color: Colors.black);
           break;
         }
+        case _Action.caption:
+        {
+          style = const TextStyle(
+              fontSize: 14, fontWeight: FontWeight.w200, color: Colors.grey, fontStyle: FontStyle.italic);
+          break;
+        }
+        
       default:
         {
           style = const TextStyle(fontSize: 14, color: Colors.black);
@@ -46,7 +59,7 @@ class MyText extends StatelessWidget {
     }
     return Container(
       padding:
-          myAction == Action.title ? EdgeInsets.all(16) : EdgeInsets.all(8),
+          myAction == _Action.heading ? EdgeInsets.all(16) : EdgeInsets.all(8),
       child: Text(
         label,
         style: style,
@@ -55,4 +68,4 @@ class MyText extends StatelessWidget {
   }
 }
 
-enum Action { title, subtitle, paragraph }
+enum _Action { heading, subheading, paragraph, caption }

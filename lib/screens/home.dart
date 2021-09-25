@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_named_constructor/widgets/my_text.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,18 +11,19 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          MyText.title("Essays"),
-          MyText.subTitle("Journey of a Homeless"),
-          MyText.paragraph(
+          Write.heading("Heading: Essays"),
+          Write.subheading("Sub heading: Journey of a Homeless"),
+          Write.caption("caption of story should be small"),
+          Write.paragraph(
               "Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. "),
-          MyText.subTitle("Courage to fight"),
-          MyText.paragraph(
+          Write.subheading("Buffalo must fly"),
+          Write.paragraph(
               "Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. "),
-          MyText.subTitle("Wonderful Scenes in Europe"),
-          MyText.paragraph(
+          Write.subheading("Wonderful Scenes in Europe"),
+          Write.paragraph(
               "Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. "),
-          MyText.subTitle("The crow in the City"),
-          MyText.paragraph(
+          Write.subheading("The Crow in the City"),
+          Write.paragraph(
               "Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. Lorem spum dolar sit amet. ")
         ],
       ),
